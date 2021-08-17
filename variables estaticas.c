@@ -1,32 +1,24 @@
 #include <stdio.h>
 
-/*Aplicacion que calcula y presenta cuantas cifras tiene un determinado valor numerico
-introducido por teclado */ 
+//Programa que calcula y presenta cuantas cifras tiene un valor numerico
 
 int main()
 {
-    int number;
-    int terminator;
-    int sum=0;
-    int remainder;
+    //Inicializar variables
+    int num, digitos=0;
 
-    // Bienvenida al usuario
-    printf("Ingrese un numero entero positivo a continuacion para mostrar la suma de sus digitos\n");
+    //Bienvenida al usuario
+    printf("Ingrese un numero a continuacion para mostrar la cantidad de cifras que tiene: \n");
+    scanf("%d", &num);
 
-    // Obtener la entrada del usuario
-    scanf("%d", &number);
-    terminator = number;
-
-    while(terminator != 0) {
-        remainder = terminator % 10;
-        sum = sum + remainder;
-        terminator = terminator / 10;
+    //Calcular cantidad de cifras
+    while(num != 0) {
+        num=num/10;
+        digitos++;
     }
 
-    printf("Suma de los digitos = %d\n\n",sum);
+    //Imprimir respuesta
+    printf("Cantidad de cifras: %d\n",digitos);
 
-
-    // Previene que la ventana de la consola se cierre 
-    system("pause");
-
+    return 0;
 }
